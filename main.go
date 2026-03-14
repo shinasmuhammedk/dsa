@@ -1,7 +1,8 @@
 package main
 
 import (
-	bst "dsa/BST"
+	// bst "dsa/BST"
+	heapp "dsa/Heap"
 	"fmt"
 	// bubblesort "dsa/BubbleSort"
 	// insertionsort "dsa/InsertionSort"
@@ -41,25 +42,52 @@ func main() {
 
 	// fmt.Println(maps.WordFrequencyCounter("go is fun and go is fast"))
 
-	var root *bst.TreeNode
-	values := []int{4, 2, 12, 9, 15, 30, 2, 16, 7, 9, 14}
-	for _, v := range values {
-		root = bst.Insert(root, v)
-	}
-	fmt.Println("INORDER TRAVERSAL")
-	bst.Inorder(root)
+	// var root *bst.TreeNode
+	// values := []int{4, 2, 12, 9, 15, 30, 2, 16, 7, 9, 14}
+	// for _, v := range values {
+	// 	root = bst.Insert(root, v)
+	// }
+	// fmt.Println("INORDER TRAVERSAL")
+	// bst.Inorder(root)
 
-	fmt.Println("\nPREORDER TRAVERSAL")
-	bst.Preorder(root)
+	// fmt.Println("\nPREORDER TRAVERSAL")
+	// bst.Preorder(root)
 
-	fmt.Println("\nPOSTORDER TRAVERSAL")
-	bst.Postorder(root)
+	// fmt.Println("\nPOSTORDER TRAVERSAL")
+	// bst.Postorder(root)
 
-	node := bst.Search(root, 99)
+	// node := bst.Search(root, 99)
 
-	if node != nil {
-		fmt.Println("\nValue found", node.Val)
-	} else {
-		fmt.Printf("\nValue not found")
-	}
+	// if node != nil {
+	// 	fmt.Println("\nValue found", node.Val)
+	// } else {
+	// 	fmt.Printf("\nValue not found")
+	// }
+    
+    
+    
+    h := &heapp.MinHeap{}
+    h.Insert(10)
+    h.Insert(4)
+    h.Insert(15)
+    h.Insert(2)
+    h.Insert(7)
+    fmt.Println("Heap:",h.Data)
+    fmt.Println("Min",h.ExtractMin())
+    fmt.Println("Min",h.ExtractMin())
+    fmt.Println("Heap after extraction",h.Data)
+    
+    
+    hm := &heapp.MaxHeap{}
+    hm.Insert(10)
+    hm.Insert(4)
+    hm.Insert(15)
+    hm.Insert(2)
+    hm.Insert(7)
+    fmt.Println("Heap:", hm.Data)
+
+	fmt.Println("Extract:", hm.ExtractMax())
+	fmt.Println("Extract:", hm.ExtractMax())
+
+	fmt.Println("Heap after extraction:", hm.Data)
 }
