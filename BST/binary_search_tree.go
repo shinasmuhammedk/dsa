@@ -9,7 +9,7 @@ type TreeNode struct {
 }
 
 func Insert(root *TreeNode, val int) *TreeNode {
-	if root == nil {
+	    if root == nil {
 		return &TreeNode{Val: val}
 	}
 
